@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FocusedBrain</title>
+<style>
+    body, html { 
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+        margin: 0; 
+        padding: 0; 
+        color: #333; 
+        background-color: #f4f4f4; 
+        height: 100%; 
+        scroll-behavior: smooth; 
+        overflow-x: hidden;
+    }
+    header { 
+        background-image: url('image.jpg');
+        color: white;
+        padding: 20px 20px;
+        text-align: center;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        overflow: hidden;
+    }
+    .heading{
+        color: rgb(6, 6, 38);
+        font-size: 40px;
+    }
+    section { 
+        padding: 20px; 
+        background: white; 
+        border-radius: 8px; 
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        box-sizing: border-box;
+    }
+    footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+        width: 100%;
+    }
+    .footer-links {
+        display: flex;
+        justify-content: space-around;
+        list-style-type: none;
+        padding: 0;
+    }
+    .footer-links li a {
+        color: white;
+        text-decoration: none;
+    }
+    h1, h2 { 
+        color: rgb(0, 0, 0); 
+    }
+    p { 
+        margin: 0;
+        padding: 0;
+        line-height: 1.5;
+    }
+    .info-block {
+        background-color: #eee;
+        padding: 10px;
+        margin: 5px;
+        border-radius: 4px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        width: 40%; 
+        text-align: center;
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+        height: 50px; 
+    }
+    .button-container {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%; 
+    }
+    .row {
+        display: flex;
+        justify-content: center; 
+    }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .fade-in { 
+        animation: fadeIn ease 3s; 
+        animation-fill-mode: forwards; 
+    }
+</style>
+</head>
+<body>
+<header>
+    <h1 class="heading">FocusedBrain</h1>
+    <p>Made by Kliment Liubchenko</p>
+</header>
+<section id="about" class="fade-in">
+    <h2>About Technology</h2>
+    <p>During training we notice how our brain slowly starts to fade, we lose our attention to the workout, and the only thought is how great it would be to just stop.</p>
+    <p>Experienced sportsman are more used to such behaviour, so they push themselves beyond their limits, this is called natural modulation of brain activity.</p>
+    <p>I want to introduce a wearable ultrasound stimulating device, which would provide motivation before exercise and Mind-Body connection for best performance.</p>
+</section>
+<section id="solutions" class="fade-in">
+    <h2>Solution for problems with:</h2>
+    <p></p>
+    <div class="button-container">
+        <div class="row">
+            <div class="info-block">Disorientation</div>
+            <div class="info-block">Apathy</div>
+            <div class="info-block">Flawedness</div>
+        </div>
+        <div class="row">
+            <div class="info-block">Impairement</div>
+            <div class="info-block">Fatigue</div>
+        </div>
+    </div>
+</section>
+<footer>
+    <ul class="footer-links">
+        <li><a href="https://medium.com/@eddyvaisberg/peak-experiences-at-the-push-of-a-button-my-tfus-experiment-09b982a48666">Ultrasound Stimulation Experience</a></li>
+        <li><a href="https://pubmed.ncbi.nlm.nih.gov/26601412/">Audio-Visual Stimulation</a></li>
+        <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10796145/">Response Inhibition</a></li>
+    </ul>
+</footer>
+</body>
+</html>
+
+
+
+
+
+
+
