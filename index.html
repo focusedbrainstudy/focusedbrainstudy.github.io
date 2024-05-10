@@ -33,7 +33,8 @@
         padding: 20px; 
         background: white; 
         border-radius: 8px; 
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+        box-shadow: none; /* Removed box-shadow to prevent grey lines */
+        margin: 0; /* Ensuring no margin between sections */
         height: 100vh;
         display: flex;
         flex-direction: column;
@@ -41,6 +42,7 @@
         align-items: center;
         text-align: center;
         box-sizing: border-box;
+        transition: opacity 2s ease;
     }
     footer {
         background-color: #333;
@@ -58,6 +60,11 @@
     .footer-links li a {
         color: white;
         text-decoration: none;
+        transition: color 0.5s ease; /* Smooth transition for color change */
+    }
+
+    .footer-links li a:hover {
+        color: #aaa; /* Darker shade when hovered */
     }
     h1, h2 { 
         color: rgb(0, 0, 0); 
@@ -91,10 +98,11 @@
         display: flex;
         justify-content: center; 
     }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    .fade-in { 
-        animation: fadeIn ease 3s; 
-        animation-fill-mode: forwards; 
+    .visible { 
+        opacity: 1; 
+    }
+    .hidden { 
+        opacity: 0; 
     }
 </style>
 </head>
@@ -103,13 +111,13 @@
     <h1 class="heading">FocusedBrain</h1>
     <p>Made by Kliment Liubchenko</p>
 </header>
-<section id="about" class="fade-in">
+<section id="about" class="hidden">
     <h2>About Technology</h2>
     <p>During training we notice how our brain slowly starts to fade, we lose our attention to the workout, and the only thought is how great it would be to just stop</p>
-    <p>Experienced sportsman are more used to such behaviour, so they push themselves beyond their limits, this is called natural modulation of brain activity</p>
+    <p>Experienced sportsman are more used to such behaviour, so they push themselves beyond expected limits, resulting in natural modulation of brain activity</p>
     <p>I want to introduce a wearable ultrasound stimulating device, which would provide motivation before exercise and Mind-Body connection for best performance</p>
 </section>
-<section id="solutions" class="fade-in">
+<section id="solutions" class="hidden">
     <h2>Solution for problems with:</h2>
     <p></p>
     <div class="button-container">
@@ -131,12 +139,32 @@
         <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10796145/">Response Inhibition</a></li>
     </ul>
 </footer>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const observerOptions = {
+        root: null,
+        threshold: 0.1
+    };
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.replace('hidden', 'visible');
+            } else {
+                entry.target.classList.replace('visible', 'hidden');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('section').forEach(section => {
+        sectionObserver.observe(section);
+    });
+
+    // Add a slight delay to trigger the fade-in effect
+    setTimeout(() => {
+        document.getElementById('about').classList.replace('hidden', 'visible');
+    }, 100); // Delay can be adjusted based on desired user experience
+});
+</script>
 </body>
 </html>
-
-
-
-
-
-
-
